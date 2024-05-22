@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from './Header';
+import photogrid from '../images/photo-grid.png'
 
 
-export default function Main(){
-    return(
+export default function Main() {
+    return (
         <main>
-            <Header />
+            
         </main>
     )
 }
