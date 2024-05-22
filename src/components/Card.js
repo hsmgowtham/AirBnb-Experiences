@@ -29,19 +29,17 @@ export default function Card(props) {
         badgeText = "ONLINE"
     }
     return (
-        <section className="cards">
-            <div className="card">
-                { badgeText && <div className="card--badge">{badgeText}</div>}
-                <img src={`../images/${props.coverImg}`} alt="card-img" className="card--image" />
-                <div className="card--stats">
-                    <img src={`../images/star.png`} alt="star" className="card--star" />
-                    <span>{props.stats.rating}</span>
-                    <span className="gray">({props.stats.  reviewCount}) - </span>
-                    <span className="gray">{props.location}</span>
-                </div>
-                <p>{props.title}</p>
-                <p> <span className="bold">From ${props.price}</span> / person</p>
+        <div className="card">
+            {badgeText && <div className="card--badge">{badgeText}</div>}
+            <img src={`../images/${props.coverImg}`} alt="card-img" className="card--image" />
+            <div className="card--stats">
+                <img src={`../images/star.png`} alt="star" className="card--star" />
+                <span>{props.stats.rating}</span>
+                <span className="gray">({props.stats.reviewCount}) - </span>
+                <span className="gray">{props.location}</span>
             </div>
-        </section>
+            <p>{props.title}</p>
+            <p> <span className="bold">From ${props.price}</span> / person</p>
+        </div>
     )
 }
