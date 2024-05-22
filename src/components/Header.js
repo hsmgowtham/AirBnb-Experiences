@@ -5,7 +5,7 @@ export default function Header(){
     return(
         <nav>
             <div className='logo-img'>
-                <img src={logo} alt='air-bnb-logo'/>
+                <img src={logo} alt='air-bnb-logo' className='nav--logo'/>
             </div>
         </nav>
     )

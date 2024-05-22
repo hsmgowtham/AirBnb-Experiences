@@ -15,3 +15,7 @@ nav{
   height: 25.35px;
   margin: 22px 0px 0px 30px;
 }
+
+.nav--logo {
+  max-width: 100px;
+}
