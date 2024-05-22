@@ -1,6 +1,4 @@
 import React from "react"
-import photo1 from '../images/image 12.png'
-import star from '../images/Star 1.png'
 
 
 /*
@@ -22,20 +20,26 @@ Notes:
   this data into the component.
 */
 
-export default function Card() {
+export default function Card(props) {
+    console.log(props)
+    let badgeText
+    if (props.openSpots === 0) {
+        badgeText = "SOLD OUT"
+    } else if (props.location === "Online") {
+        badgeText = "ONLINE"
+    }
     return (
-        <section className="cards">
-            <div className="card">
-                <img src={photo1} alt="kate" className="card--image" />
-                <div className="card--stats">
-                    <img src={star} alt="star" className="card--star" />
-                    <span>5.0</span>
-                    <span className="gray">(6) - </span>
-                    <span className="gray">USA</span>
-                </div>
-                <p> Life lessons with katie</p>
-                <p> <span className="bold">From $136</span> / person</p>
+        <div className="card">
+            {badgeText && <div className="card--badge">{badgeText}</div>}
+            <img src={`../images/${props.coverImg}`} alt="card-img" className="card--image" />
+            <div className="card--stats">
+                <img src={`../images/star.png`} alt="star" className="card--star" />
+                <span>{props.stats.rating}</span>
+                <span className="gray">({props.stats.reviewCount}) - </span>
+                <span className="gray">{props.location}</span>
             </div>
-        </section>
+            <p>{props.title}</p>
+            <p> <span className="bold">From ${props.price}</span> / person</p>
+        </div>
     )
 }
